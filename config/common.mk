@@ -8,7 +8,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
-    ro.com.android.dataroaming=false
+    ro.com.android.dataroaming=false \
+    ro.com.android.dataroaming=false \
+    pm.sleep_mode=1 \
+    ro.ril.disable.power.collapse=0 \
+    ro.ril.fast.dormancy.rule=0 \
+    ro.ril.enable.amr.wideband=1 \
+    persist.cust.tel.eons=1 \
+    ro.config.hw_fast_dormancy=1 \
+    ro.ril.enable.dtm=1 \
+    ro.ril.hsdpa.category=8 \
+    ro.ril.enable.a53=1 \
+    ro.ril.enable.3g.prefix=1 \
+    ro.ril.htcmaskw1.bitmask=4294967295 \
+    ro.ril.htcmaskw1=14449 \
+    ro.ril.hsupa.category=6 \
+    persist.sys.shutdown.mode=hibernate \
+    ro.config.hw_quickpoweron=true \
+    windowsmgr.max_events_per_sec=90 \
+    ro.max.fling_velocity=12000 \
+    ro.min.fling_velocity=8000
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
