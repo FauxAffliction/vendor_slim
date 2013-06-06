@@ -66,7 +66,6 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.d/00slim:system/etc/init.d/00slim \
     vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/slim/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
-    vendor/slim/prebuilt/common/etc/liberty.bsh:system/etc/liberty.bsh \
     vendor/slim/prebuilt/common/etc/init_trigger.disabled:system/etc/init_trigger.disabled \
     vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
 
@@ -125,10 +124,10 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 include vendor/slim/config/themes_common.mk
 
 # Versioning System
-# UNOFFICIAL 5.6
+# Reopen for 6.1
 PRODUCT_VERSION_MAJOR = 4.2.2
 PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = 5.6
+PRODUCT_VERSION_MAINTENANCE = 6.1
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=$(BUILD_ID)
 
@@ -137,16 +136,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ifdef SLIM_WEEKLY
     SLIM_VERSION := Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-WEEKLY
-    SLIM_MOD_VERSION := Slim-$(PRODUCT_RELEASE_NAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-WEEKLY
+    SLIM_MOD_VERSION := Slim-$(SLIM_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-WEEKLY
     PLATFORM_VERSION_CODENAME := WEEKLY
 else
     ifdef SLIM_RELEASE
         SLIM_VERSION := Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-OFFICIAL
-        SLIM_MOD_VERSION := Slim-$(PRODUCT_RELEASE_NAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-OFFICIAL
+        SLIM_MOD_VERSION := Slim-$(SLIM_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-OFFICIAL
         PLATFORM_VERSION_CODENAME := REL
     else
         SLIM_VERSION := Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-UNOFFICIAL-$(shell date +"%Y%m%d-%H%M")
-        SLIM_MOD_VERSION := Slim-$(PRODUCT_RELEASE_NAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-UNOFFICIAL-$(shell date +"%Y%m%d-%H%M")
+        SLIM_MOD_VERSION := Slim-$(SLIM_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-UNOFFICIAL-$(shell date +"%Y%m%d-%H%M")
         PLATFORM_VERSION_CODENAME := UNOFFICIAL
     endif
 endif
